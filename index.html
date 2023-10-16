@@ -5,97 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>README do Meu Software</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
-            background-image: url('teste.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .section {
-            display: none;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-        }
-
-        h1 {
-            text-align: center;
-            width: 100%;
-        }
-
-        .centralized-image {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .centered-content {
-            text-align: center;
-        }
-
-        .chamativo-btn {
-            background-color: #000000;
-            border: none;
-            border-radius: 15px;
-            color: white;
-            font-size: 20px;
-            padding: 10px 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .chamativo-btn:hover {
-            background-color: #ff6347;
-            transform: translateY(-3px);
-            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .chamativo-btn:active {
-            transform: translateY(2px);
-        }
-
-        .whatsapp-btn {
-            background-color: #25D366;
-            border: none;
-            border-radius: 15px;
-            color: white;
-            font-size: 20px;
-            padding: 10px 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .whatsapp-btn:active {
-            transform: translateY(2px);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -185,47 +95,7 @@
         <button id="next">Próximo</button>
         <a href="https://wa.me/5554999451624" target="_blank" class="whatsapp-btn" id="whatsapp">Enviar mensagem via WhatsApp</a>
     </div>
-
-    <script>
-        let sections = document.querySelectorAll('.section');
-        let currentIndex = 0;
-        let prevBtn = document.getElementById('prev');
-        let nextBtn = document.getElementById('next');
-        let whatsappBtn = document.getElementById('whatsapp');
-
-        function updateButtons() {
-            if (currentIndex === 0) {
-                prevBtn.style.display = 'none';
-            } else {
-                prevBtn.style.display = 'inline-block';
-            }
-
-            if (currentIndex === sections.length - 1) {
-                nextBtn.style.display = 'none';
-                whatsappBtn.style.display = 'inline-block';
-            } else {
-                nextBtn.style.display = 'inline-block';
-                whatsappBtn.style.display = 'none';
-            }
-        }
-
-        prevBtn.addEventListener('click', () => {
-            sections[currentIndex].classList.remove('active');
-            currentIndex--;
-            sections[currentIndex].classList.add('active');
-            updateButtons();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            sections[currentIndex].classList.remove('active');
-            currentIndex++;
-            sections[currentIndex].classList.add('active');
-            updateButtons();
-        });
-
-        updateButtons();
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
