@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README do Meu Software</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            background-image: url('teste.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            width: 100%;
+        }
+
+        .centralized-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .centered-content {
+            text-align: center;
+        }
+
+        .chamativo-btn {
+            background-color: #000000;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 20px;
+            padding: 10px 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .chamativo-btn:hover {
+            background-color: #ff6347;
+            transform: translateY(-3px);
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .chamativo-btn:active {
+            transform: translateY(2px);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 20px;
+            padding: 10px 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>EEMUSIC - RECOMENDATION SYSTEM</h1>
+
+        <!-- Seção 1: Informações Do Projeto -->
+        <div class="section active" id="info">
+        <h2>Informações Do Projeto</h2>
+        <p>Olá, primeiramente, obrigado por participar deste experimento. Não se preocupe, seus dados serão anônimos, nenhum nome será citado e nem questionado durante toda e qualquer experiência e/ou apresentação.</p>
+        <h4>Sobre o que é o Projeto?</h4>
+        <p>O projeto envolve algumas áreas do conhecimento, em sua base, resume-se num sistema de recomendação de músicas com base em dados cerebrais, captados por um EEG (Eletroencefalograma)</p>
+        <h4>Como o processo/software funciona?</h4>
+        <p>O processo é longo, mas, o resultado é satisfatório. Iniciamos com a coleta de dados, temos três tipos de dados sendo gerados a cada segundo. Os dados que vem do EEG, dados das músicas do Spotify e previsões geradas por um MLP (Machine Learning), tudo isso sendo salvo em um banco de dados pessoal. A imagem abaixo explica exatamente o processo do sistema como um todo: </p>
+        <img src="TCC - Processo.jpg" alt="Processo completo EEMUSIC" class="centralized-image"  style="max-width: 60%;">
+        <p>Na primeira etapa, o usuário precisa dar o consentimento de uso dos dados em sua conta do Spotify. Esse consentimento, garante que a aplicação consiga buscar dados em tempo real do que está acontecendo em sua conta. Música que está tocando, artistas e gêneros são alguns exemplos que são buscados recorrentemente pela aplicação. </p>
+        <p>Na segunda etapa, considerando que tanto a conexão com o EEG quanto com o Spotify já foram devidamente configuradas, realiza-se a extração fundamental dos dados do usuário. Essa extração abrange informações gerais do eletroencefalograma e das músicas. Esses dados são coletados a cada intervalo de 1 segundo, resultando em uma extensa tabela que requer processamento.</p>
+        <p>Partindo para a etapa 3 e 4, submeteu-se a tabela geral de dados exportados a um processamento. Esse processamento compete a validação de dados que são realmente relevantes para o experimento. Além disso, como os dados são exportados a cada 1 segundo, precisou-se realizar a média dos dados ao longo to tempo, mais especificamente dos dados de atenção e meditação do usuário.</p>
+        <p>Após a exportação e processamento dos dados, chegamos à quinta etapa, na qual é obtido o dataset final do usuário. É claro que, para que seja possível analisar algumas interações e obter resultados significativos, o usuário precisa ter escutado um número mínimo de músicas. Nessa etapa, o dataset é disponibilizado ao usuário final, conforme apresentado na subetapa 5.1. Dessa forma, o usuário já recebe um feedback inicial e pode visualizar as músicas que já ouviu, juntamente com sua respectiva atenção.</p>
+        <p>A sexta etapa compreende a submissão do conjunto de dados do usuário a um algoritmo de Aprendizado de Máquina. Essa validação do modelo de Aprendizado de Máquina é de suma importância para aferir a confiabilidade e assertividade dos dados obtidos.</p>
+        <p>Com base na precisão dos dados obtida na fase anterior, a etapa sete consiste na criação de uma playlist que incorpora todos os dados previamente gerados e analisados. A SubEtapa 7.1 está diretamente integrada ao Spotify, uma vez que é por meio desse serviço que uma nova playlist é construída, contendo músicas que atendam a altos níveis de atenção do usuário final. Por fim, a etapa oito encerra o ciclo, fornecendo informações relevantes ao usuário final, como dados processados por meio de aprendizado de máquina e a playlist automaticamente gerada.</p>
+        <h4>Quais são os requisitos para utilizar o sistema?</h4>
+        <ul>
+            <li>Ter uma conta Spotify premium</li>
+            <li>Ter um computador com conexão bluethoot e sistema operacional Windows</li>
+            <li>O usuário deve realziar tarefas e/ou trabalho administrativo em frente ao computador</li>
+            <li>A empresa do usuário permite o ato de ouvir música enquanto trabalha</li>
+            <li>O usuário deve estar num ambiente com o menor ruído possível, recomendável que seja algum escritório calmo e sem o transito e/ou interação de pessoas.</li>
+            <li>Utilizar o sistema por pelo menos 3 horas, se possível, sem interrupções</li>
+            <li>O fone de ouvido a ser usado não pode ser um fone "Supra-Auricular", também conhecido como "On-ear". São aqueles fones que cobrem a orelha inteira, ou seja, você deve ter um fone intra-auricular. (fones pequenos que vão dentro do ouvido)</li>
+        </ul>
+        <h4>O que eu preciso fazer?</h4>
+        <p>Ao clicar em "Próximo" você será guiado para um passo a passo com todas as informações e configurações necessárias para prosseguir com conexões do EEG</p>
+        </div>
+
+        <!-- Seção 2: Formulário -->
+        <div class="section centered-content" id="formulario">
+            <h2>1. Formulário</h2>
+            <p>O primeiro passo se trata do preenchimento de um formulário demográfico, este formulário serve para entendermos os usuários que vão utilizar do software. Depois de preencher o formulário, começamos com as configurações do aparelho (EEG) e do software </p>
+            <!--<button class="chamativo-btn">Responder</button>-->
+            <iframe width="1500px" height="900px" src="https://forms.office.com/r/M3GjWNf08N?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+        </div>
+
+        <!-- Seção 3: ThinkGear -->
+        <div class="section" id="thinkgear">
+            <h2>2. Conexões</h2>
+            <p>O ThinkGear é responsável pela conexão com o EEG (Eletroencefalograma), no arquivo que você receceu, tem um executável com o nome dele para ser instalado.</p>
+            <h4>Garantir Conexão</h4>
+            <p>Precisamos garantir a conexão tanto com o bluethoot quanto no ThinkGear. Após instalar o ThinkGear, verifique se ele está habilitado em seu Windows, conforme na imangem abaixo</p>
+            <img src="thinkgear.png" alt="Processo completo EEMUSIC" class="centralized-image"  style="max-width: 60%;">
+            <p>Após confirmar que está tudo certo com o ThinkGear, partimos para conexão bluethoot. Ligue o EEG e o bluethoot do seu computador, faça uma busca de dispositivos próximos e clique para emparelhar com o EEG. Abaixo você terá imagens para apoio no emparelhamento:</p>
+            <img src="p1.png" alt="Processo completo EEMUSIC" class="centralized-image"  style="max-width: 50%;">
+            <img src="p2.png" alt="Processo completo EEMUSIC" class="centralized-image"  style="max-width: 50%;">
+            <img src="p3.png" alt="Processo completo EEMUSIC" class="centralized-image"  style="max-width: 50%;">
+            <img src="p4.png" alt="Processo completo EEMUSIC" class="centralized-image"  style="max-width: 50%;">
+            <h5>OBSERVAÇÃO 1: O DISPOSITIVO IRÁ APARECER COMO EMPARELHADO, VOCÊ TENTARÁ APERTAR EM CONECTAR E ELE APRESENTARÁ ERRO DE CONEXÃO, PORÉM ISSO NÃO É UM PROBLEMA, POIS, O QUE FAZ A CONEXÃO COM O EEG É O THINKGEAR, ENTÃO, APENAS ESTANDO COMO EMPARELHADO ELE JÁ IRA FUNCIONAR</h5>
+            <h5>OBSERVAÇÃO 2: VOCÊ DEVE PAREAR COM UM DISPOSITIVO RECONHECIDO COMO DISPOSITIVO DE ÁUDIO EM SEU COMPUTADOR</h5>
+            <h5>SENHA DE EMPARELHAMENTO: 0000</h5>
+            <h2>EEMUSIC</h2>
+            <p>Após garantir que o bluethoot e o ThinkGear estejam configurados e ativos, chegamos no software principal, o EEMUSIC. Ao rodar o executável ele tentará fazer a conexão com o EEG, após garantir a conexão, ele libera o botão de play e pause para iniciar a coleta de dados. Ao clicar em "Play" pela primeira vez você terá que conceder permissões da sua conta do Spotify, essa conseção é dada apenas na primeira vez que você starta o programa. Abaixo você vera uma lista de observações relevantes sobre o software.</p>
+            <h4>Observações Sobre o EEMUSIC:</h4>   
+                <li>Ao rodar o programa serão abertos duas telas, uma do software e uma tela de terminal, essa tela de terminal serve para validarmos e verificarmos caso alguma coisa de errado durante o processo, ela imprime informações importantes que estão rodando no backend do código</li>
+                <li>O botão "Play" só fica habilitado se a conexão com o EEG for bem sucedida</li>
+                <li>Caso a conexão com o EEG se perca, aparecerá um botão par a reconexão, nesse momento, caso continue tendo problemas, você pode tentar desligar e ligar novamente o EEG</li>
+                <li>Você tem em tela uma informação de como está a conexão com o EEG, ela é mostrada num botão de caixa de seleção que é apenas de visualziação,</li>
+                <li>A primeira vez que você roda o programa você precisará dar o play em sua conta do spotify</li>
+                <li>O botão de play e stop também pausam e dão play em seu spotify</li>
+                <li>Caso o software identifique 20 notas iguais em sequencias advindas do EEG ele irá pausar e informar na tela, isso significa que ele está conectado corretamente, porém tem algum ruído e/ou interferência na captação dos dados, muitas vezes causado por um mau contato e/ou o dispositivo está mal posicionado em sua cabeça</li>
+                <li>As primeira 20 músicas é você que escolhe, fique a vontade para dar play em alguma playlist que você goste, mas lembre, essas músicas afetarão diretamente nas músicas aconselhadas pelo programa. Lembrando apenas, que a idéia é termos foco e atenção enquanto você trabalha</li>
+                <li>Após a vigésima música o programa começa a gerenciar sua playlist, o que isso significa? significa que ele assume o controle da sua playlist e adiciona recomendações na fila da sua conta do Spotify</li>
+                <li>Além de adicionar essas musicas na recomendação, ele também cria e adiciona as musicas em uma playslist separada, chamad de "EEMUSIC - RECOMENDATION SISTEM". Essa playlist serve de histórico, para vc visualizar posteriormente as músicas que o software recomendou</li>
+                <li>As recomendações funcionam de que forma? a cada musica que você escuta, ele adiciona em seu banco de dados, e, cada vez que a música é alterada ele treina um MLP e da uma previsão de atenção para a próxima música. Caso a previsão para a música subsequente seja, menor que 40 (valores vão de 0 a 100), ele descarta a música e busca outra. As recomendações são feitas com base nas três melhores músicas que tiveram o dado de atenção mais alto e foram salvas em seu banco de dados</li>
+                <li>Após as 3 horas estimadas para o uso do software, ele passará para a segunda tela, nesta segunda tela você terá que fazer uma autoavaliação de todas as músicas que você ouviu, classificando-as</li>
+                <li>A ultima tela se trata de um resumo de todo que aconteceu, nela você verá os principais dados vindo do EEG do Sporify e do Machine Learning que faz as previsões</li>
+                <li>Depois disto, basta mandar o banco de dados que ele criou em sua máquina para o criador do software </li>
+                <li>Se trata de um arquivo chamado "Music_data.db" e ele foi criado na mesma pasta em que o executável do programa está, além disso, lembre-se de renomear esse arquivo para o mesmo nome que você colocou no formulário de identificação ("Nick")</li>
+        </div>
+
+        <div class="section" id="eemusic">
+            <h2>3. Considerações Finais</h2>
+            <p>Obrigado por participar do experimento, vale ressaltar que esta é uma versão de MVP, então sim, tem muita coisa a ser melhorada e muitas ideias novas que podem ser implementadas. Você pode deixar seu feedback, relato de bugs e/ou melhorias diretamente para mim, me enviando uma mensagem no whatsapp. Estou muito grato pela ajuda e atenção</p>
+        </div>
+
+        <!-- Botões de navegação -->
+        <button id="prev">Anterior</button>
+        <button id="next">Próximo</button>
+        <a href="https://wa.me/5554999451624" target="_blank" class="whatsapp-btn" id="whatsapp">Enviar mensagem via WhatsApp</a>
+    </div>
+
+    <script>
+        let sections = document.querySelectorAll('.section');
+        let currentIndex = 0;
+        let prevBtn = document.getElementById('prev');
+        let nextBtn = document.getElementById('next');
+        let whatsappBtn = document.getElementById('whatsapp');
+
+        function updateButtons() {
+            if (currentIndex === 0) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'inline-block';
+            }
+
+            if (currentIndex === sections.length - 1) {
+                nextBtn.style.display = 'none';
+                whatsappBtn.style.display = 'inline-block';
+            } else {
+                nextBtn.style.display = 'inline-block';
+                whatsappBtn.style.display = 'none';
+            }
+        }
+
+        prevBtn.addEventListener('click', () => {
+            sections[currentIndex].classList.remove('active');
+            currentIndex--;
+            sections[currentIndex].classList.add('active');
+            updateButtons();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            sections[currentIndex].classList.remove('active');
+            currentIndex++;
+            sections[currentIndex].classList.add('active');
+            updateButtons();
+        });
+
+        updateButtons();
+    </script>
+
+</body>
+
+</html>
